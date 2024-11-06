@@ -26,7 +26,7 @@ function App() {
               boxShadow: "3px 0px 5px -3px rgba(0,0,0,0.75)",
               width: "20%",
               // height: "100वvh",
-              borderTopRightRadius: "15px",
+              backgroundColor: "white",
             }}
           >
             <Navbar />

@@ -4,7 +4,17 @@ import { MdOutlineSaveAlt } from "react-icons/md";
 
 function RoastCV() {
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "white",
+        WebkitBoxShadow: "3px 0px 5px -3px rgba(0,0,0,0.75)",
+        boxShadow: "3px 0px 5px -3px rgba(0,0,0,0.75)",
+        padding: "1rem",
+        marginTop: "2rem",
+        width: "95%",
+        borderRadius: "15px",
+      }}
+    >
       <div
         style={{
           marginTop: "3rem",
@@ -25,16 +35,15 @@ function RoastCV() {
         style={{
           marginTop: "2rem",
           width: "90%",
-          backgroundColor: "#ADD8E6",
+          backgroundColor: "#CBC3E3",
           padding: "1rem",
           borderRadius: "15px",
         }}
       >
         <label
           style={{
-            fontSize: "1.3rem",
+            fontSize: "1.2rem",
             lineHeight: "2",
-            fontWeight: "200",
           }}
         >
           Hi Guys!! This article contains a lot of links, but believe me, after

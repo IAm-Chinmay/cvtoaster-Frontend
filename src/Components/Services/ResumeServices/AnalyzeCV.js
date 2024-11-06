@@ -34,7 +34,18 @@ For more tips, visit our resources at [example.com](https://example.com).
   const ana = marked.parse(response);
 
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: "white",
+        WebkitBoxShadow: "3px 0px 5px -3px rgba(0,0,0,0.75)",
+        boxShadow: "3px 0px 5px -3px rgba(0,0,0,0.75)",
+        padding: "1rem",
+        marginTop: "2rem",
+        width: "95%",
+        borderRadius: "15px",
+        marginBottom: "1rem",
+      }}
+    >
       <h1
         style={{
           textAlign: "center",
@@ -80,7 +91,7 @@ For more tips, visit our resources at [example.com](https://example.com).
         <h1>Analysis Result</h1>
         <div dangerouslySetInnerHTML={{ __html: ana }} />
       </div>
-    </>
+    </div>
   );
 }
 
