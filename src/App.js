@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Navbar from "./Components/Services/NavBar/Navbar";
+import Home from "./Components/Services/Home/Home";
+import RecycleBin from "./Components/RecycleBin/RecycleBin";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const [isLoggedIn, setLoggedIn] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <BrowserRouter>
+      {isLoggedIn && (
+        <div
+          style={{
+            display: "flex",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <div
+            style={{
+              WebkitBoxShadow: "3px 0px 5px -3px rgba(0,0,0,0.75)",
+              boxShadow: "3px 0px 5px -3px rgba(0,0,0,0.75)",
+              width: "20%",
+              // height: "100वvh",
+              borderTopRightRadius: "15px",
+            }}
+          >
+            <Navbar />
+          </div>
+          <div
+            style={{
+              marginLeft: "1.5rem",
+              width: "80%",
+            }}
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/recyclebin" element={<RecycleBin />} />
+            </Routes>
+          </div>
+        </div>
+      )}
+    </BrowserRouter>
   );
 }
 
