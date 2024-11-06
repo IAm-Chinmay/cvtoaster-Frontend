@@ -9,7 +9,11 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh",
+      }}
+    >
       <div
         style={{
           marginLeft: "1.5rem",

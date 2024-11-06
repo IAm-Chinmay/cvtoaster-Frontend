@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function FileCard() {
   return (
@@ -30,15 +31,23 @@ function FileCard() {
             flexDirection: "column",
           }}
         >
-          <li
+          <Link
             style={{
               all: "unset",
-              marginTop: ".6rem",
-              color: "red",
+              cursor: "pointer",
             }}
+            to={"/roastcv"}
           >
-            Roast Me
-          </li>
+            <li
+              style={{
+                all: "unset",
+                marginTop: ".6rem",
+                color: "red",
+              }}
+            >
+              Roast Me
+            </li>
+          </Link>
           <li
             style={{
               all: "unset",
@@ -57,15 +66,23 @@ function FileCard() {
           >
             Edit My Resume
           </li>
-          <li
+          <Link
             style={{
               all: "unset",
+              cursor: "pointer",
               marginTop: ".6rem",
-              color: "orange",
             }}
+            to={"/anylyzecv"}
           >
-            Prep Me for Interview
-          </li>
+            <li
+              style={{
+                all: "unset",
+                color: "orange",
+              }}
+            >
+              Prep Me for Interview
+            </li>
+          </Link>
         </ul>
       </div>
     </>

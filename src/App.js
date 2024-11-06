@@ -3,6 +3,10 @@ import Navbar from "./Components/Services/NavBar/Navbar";
 import Home from "./Components/Services/Home/Home";
 import RecycleBin from "./Components/RecycleBin/RecycleBin";
 
+//CV Services
+import RoastCV from "./Components/Services/ResumeServices/RoastCV";
+import AnalyzeCV from "./Components/Services/ResumeServices/AnalyzeCV";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -36,6 +40,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/recyclebin" element={<RecycleBin />} />
+              <Route path="/roastcv" element={<RoastCV />} />
+              <Route path="/anylyzecv" element={<AnalyzeCV />} />
             </Routes>
           </div>
         </div>
