@@ -7,7 +7,14 @@ import { IoIosLogOut } from "react-icons/io";
 
 import { Link } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { logout } from "../../utils/authSlice";
+
 function Navbar() {
+  const dispatch = useDispatch();
+  const Logout = () => {
+    dispatch(logout());
+  };
   return (
     <div
       style={{
@@ -146,12 +153,20 @@ function Navbar() {
               fontWeight: "300",
               display: "flex",
               alignItems: "center",
+              cursor: "pointer",
+              width: "9rem",
             }}
+            onClick={Logout}
           >
-            <IoIosLogOut />
+            <IoIosLogOut
+              style={{
+                cursor: "pointer",
+              }}
+            />
             <label
               style={{
                 marginLeft: "10%",
+                cursor: "pointer",
               }}
             >
               {" "}

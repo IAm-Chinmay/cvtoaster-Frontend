@@ -2,6 +2,7 @@ import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { PiPlusLight } from "react-icons/pi";
 import FileCard from "./FileCard";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -45,8 +46,9 @@ function Home() {
             marginBottom: "2rem",
           }}
         >
-          <div
+          <Link
             style={{
+              all: "unset",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -56,37 +58,47 @@ function Home() {
               cursor: "pointer",
               marginLeft: "2rem",
             }}
+            to={"/createcv"}
           >
             <div
               style={{
-                backgroundColor: "#ADD8E6",
-                width: "4rem",
-                borderRadius: "35px",
-                height: "4rem",
                 display: "flex",
+                flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <PiPlusLight
+              <div
                 style={{
-                  fontSize: "3rem",
-                  fontWeight: "100",
-                  color: "blue",
+                  backgroundColor: "#ADD8E6",
+                  width: "4rem",
+                  borderRadius: "35px",
+                  height: "4rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
-              />
+              >
+                <PiPlusLight
+                  style={{
+                    fontSize: "3rem",
+                    fontWeight: "100",
+                    color: "blue",
+                  }}
+                />
+              </div>
+              <label
+                style={{
+                  marginTop: "1rem",
+                  fontWeight: "400",
+                  color: "blue",
+                  fontSize: "1.2rem",
+                }}
+              >
+                Create
+              </label>
             </div>
-            <label
-              style={{
-                marginTop: "1rem",
-                fontWeight: "400",
-                color: "blue",
-                fontSize: "1.2rem",
-              }}
-            >
-              Create
-            </label>
-          </div>
+          </Link>
           <FileCard />
           <FileCard />
           <FileCard />

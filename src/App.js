@@ -3,18 +3,24 @@ import Navbar from "./Components/Services/NavBar/Navbar";
 import Home from "./Components/Services/Home/Home";
 import RecycleBin from "./Components/RecycleBin/RecycleBin";
 
+//Landing Pages
+import AuthScreen from "./Components/Landing/AuthScreen";
+
 //CV Services
+import CreateNewCV from "./Components/Services/CreateNewCV";
 import RoastCV from "./Components/Services/ResumeServices/RoastCV";
 import AnalyzeCV from "./Components/Services/ResumeServices/AnalyzeCV";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(true);
+  const isLoggedIn = useSelector((state) => state.userAuth.isLogin);
+  console.log(isLoggedIn);
 
   return (
     <BrowserRouter>
-      {isLoggedIn && (
+      {isLoggedIn ? (
         <div
           style={{
             display: "flex",
@@ -25,7 +31,6 @@ function App() {
               WebkitBoxShadow: "3px 0px 5px -3px rgba(0,0,0,0.75)",
               boxShadow: "3px 0px 5px -3px rgba(0,0,0,0.75)",
               width: "20%",
-              // height: "100वvh",
               backgroundColor: "white",
             }}
           >
@@ -39,12 +44,17 @@ function App() {
           >
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/createcv" element={<CreateNewCV />} />
               <Route path="/recyclebin" element={<RecycleBin />} />
               <Route path="/roastcv" element={<RoastCV />} />
               <Route path="/anylyzecv" element={<AnalyzeCV />} />
             </Routes>
           </div>
         </div>
+      ) : (
+        <Routes>
+          <Route path="/" element={<AuthScreen />} />
+        </Routes>
       )}
     </BrowserRouter>
   );
